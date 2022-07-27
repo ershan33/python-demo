@@ -1,6 +1,3 @@
-from functools import reduce
-
-
 import clipboard
 
 
@@ -20,7 +17,7 @@ def merge_lines():
     1. 从剪贴板获取文本数据
     2. 将文本数据里的 \r\n or \n 给替换掉
     3. 把处理过的文本放到剪贴板里面
-    
+
     面向过程的编程
     """
     text = clipboard.paste()
