@@ -1,10 +1,10 @@
-'''
+"""
 文件:   oop_ex.py
 作者:   二山
 邮箱:   ershan_coding@outlook.com
 描述:   类，对象，实例，实例属性和方法，
-        类属性和方法，静态方法  
-'''
+        类属性和方法，静态方法
+"""
 
 
 # Python 一切皆对象
@@ -17,12 +17,12 @@
 # id(3)
 # type(3)
 # 3  # 字面量
-# 
+#
 # s = 's'
 # id(s)
 # type(s)
 # s  # 变量
-# 
+#
 # id(print)
 # type(print)
 # print
@@ -45,7 +45,7 @@ class Person:
 
     # 实例方法
     def say_hi(self):
-        print(self.name, 'hi')
+        print(self.name, "hi")
 
     @classmethod
     def average_age(cls):
@@ -61,14 +61,16 @@ class Person:
 
 if __name__ == "__main__":
     # Person, int, str -> p1，3，'python'
-    p1 = Person("p1", 18, 'male')  # 实例化：通过类型(Person)
-                                   # 创建实例(p1)的过程
+    # 实例化：通过类型(Person)
+    # 创建实例(p1)的过程
+    p1 = Person("p1", 18, "male")
+
     id(p1)
     type(p1)
     p1
 
-    mike = Person('mike', 18, 'male')
-    lily = Person('lily', 15, 'female')
+    mike = Person("mike", 18, "male")
+    lily = Person("lily", 15, "female")
     Person.total_cnt
     Person.total_age
     Person.average_age()
