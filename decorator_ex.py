@@ -2,9 +2,9 @@
 # coding: utf-8
 
 # # 装饰器
-# 
+#
 # 函数是一等公民（first-class）
-# 
+#
 # 1. 可以在函数里面定义函数（嵌套定义）
 # 2. 把函数当作参数
 # 3. 把函数当作返回值
@@ -12,14 +12,14 @@
 # ## 函数里面定义函数
 
 # In[1]:
+import time
 
 
 def outer():
     def inner():
-        '''Define an inner in outer.
-        '''
-        print('inner function')
-    
+        """Define an inner in outer."""
+        print("inner function")
+
     inner()
 
 
@@ -35,7 +35,7 @@ outer()
 
 
 def say_hi():
-    print('hi')
+    print("hi")
 
 
 # In[4]:
@@ -61,7 +61,7 @@ do(say_hi)
 def add_(val):
     def add(x):
         return x + val
-    
+
     return add
 
 
@@ -96,22 +96,21 @@ add2(1)
 
 
 # ## 装饰器
-# 
+#
 # ### 装饰器的原理
 
 # In[12]:
 
 
 def print_info(func):  # 函数当作参数
-    """在不改变函数定义的情况下，改变函数的行为
-    """
-    
+    """在不改变函数定义的情况下，改变函数的行为"""
+
     # 在函数内部定义函数
     def wrapper():
         print(f"start function {func.__name__}")
         func()
         print(f"end function {func.__name__}")
-        
+
     return wrapper  # 函数作为返回值
 
 
@@ -126,7 +125,7 @@ print_info(say_hi)()
 
 @print_info
 def say_hi1():
-    print('hi')
+    print("hi")
 
 
 # In[15]:
@@ -141,12 +140,11 @@ say_hi1()
 
 
 def print_info1(func):
-    
     def wrapper(*args):  # 用 *args（**kwargs） 接收参数
         print(f"start function {func.__name__}")
         func(*args)
         print(f"end function {func.__name__}")
-        
+
     return wrapper
 
 
@@ -170,13 +168,12 @@ say_hi2("小心地滑")
 
 
 def print_info2(func):
-    
     def wrapper(*args):
         print(f"start function {func.__name__}")
         ret = func(*args)  # 用一个变量 ret 接收返回值
         print(f"end function {func.__name__}")
         return ret  # 完成所有操作以后把 ret 返回
-        
+
     return wrapper
 
 
@@ -199,18 +196,16 @@ add(1, 2)
 # In[22]:
 
 
-import time
 # 在函数内部定义函数
 def timer(func):
-    """在不改变函数定义的情况下，改变函数的行为
-    """
-    
+    """在不改变函数定义的情况下，改变函数的行为"""
+
     def wrapper(*args):
         start = time.time()
         ret = func(*args)
         print(f"total tiem for {func.__name__}: {time.time() - start}")
         return ret
-        
+
     return wrapper
 
 
@@ -227,4 +222,3 @@ def long_loop():
 
 
 long_loop()
-

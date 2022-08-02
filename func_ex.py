@@ -36,6 +36,7 @@ def func_name():
 def tool():
     print("使用工具。")
 
+
 # 调用了一个函数 -> 我们使用了一个工具
 tool()
 
@@ -156,11 +157,5 @@ func(
     gender="female",  # **kwargs
 )
 
-func(
-    "zhansan",
-    18,
-    "xxx",
-    "xx1",
-    gender="male"
-)
+func("zhansan", 18, "xxx", "xx1", gender="male")
 #######################################################################

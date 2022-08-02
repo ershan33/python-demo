@@ -2,7 +2,6 @@ import tkinter as tk  # python 标准库提供的图形化界面
 
 import clipboard
 
-
 """
 图形化界面：对交互式要求比较强
     - office
@@ -80,4 +79,3 @@ if __name__ == "__main__":
     exit_but = tk.Button(text="exit", command=window.destroy)
     exit_but.pack()
     window.mainloop()
-

@@ -1,16 +1,15 @@
-'''
+"""
 文件:   thread_ex.py
 作者:   二山
 邮箱:   ershan_coding@outlook.com
 描述:   Python 多线程的例子
-'''
+"""
 
 
-import time
 import threading
+import time
 
 import clipboard
-
 
 Flag = True
 
@@ -30,10 +29,10 @@ if __name__ == "__main__":
 
     while True:
         flag = input(">>> ")
-        if flag.casefold() == 'q':
+        if flag.casefold() == "q":
             Flag = False
             break
-        elif flag.casefold() == 'print':
+        elif flag.casefold() == "print":
             print("from main")
         else:
             print("unknown command")
